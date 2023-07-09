@@ -108,4 +108,4 @@ Route::post('password', [UserController::class, 'password_action'])->name('passw
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
 
-Route::post('/file-upload', [ImageController::class, 'upload'])->middleware('auth');
+Route::post('/file-upload', [ImageController::class, 'upload'])->name('upload.image')->middleware('auth');

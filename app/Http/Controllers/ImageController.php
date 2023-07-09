@@ -19,8 +19,7 @@ class ImageController extends Controller
     {
         $host = $request->getSchemeAndHttpHost();
         $file = $request->file('file');
-        $path = $file->store('images', 'public'); // Save the uploaded image in the storage directory
-
+        $path = $file->store('public/images'); // Save the uploaded image in the storage directory
         $url = Storage::url($path); // Get the URL for accessing the image
 
         return response()->json(['location' => $url]);

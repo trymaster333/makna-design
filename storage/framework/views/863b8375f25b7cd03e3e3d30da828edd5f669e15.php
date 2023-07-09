@@ -70,13 +70,13 @@
     selector: '#deskripsi',
     plugins: 'image table advcode',
     height:500,
-    images_upload_url: '/file-upload', // The URL to your Laravel route for handling image uploads
+    images_upload_url: "<?php echo e(URL::to('file-upload')); ?>", // The URL to your Laravel route for handling image uploads
     images_upload_handler: function (blobInfo, success, failure) {
       var xhr, formData;
 
       xhr = new XMLHttpRequest();
       xhr.withCredentials = false;
-      xhr.open('POST', '/file-upload'); // The URL to your Laravel route for handling image uploads
+      xhr.open('POST', "<?php echo e(URL::to('file-upload')); ?>"); // The URL to your Laravel route for handling image uploads
 
       xhr.onload = function () {
         var json;
