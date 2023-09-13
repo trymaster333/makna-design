@@ -17,13 +17,13 @@
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link {{ (request()->segment(2) == 'dashboard') ? 'active' : '' }}"
                             aria-current="page" href="{{ route('dashboard') }}">
                             <span data-feather="home"></span>
                             Dashboard
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link {{ (request()->segment(2) == 'about') ? 'active' : '' }}"
                             href="{{ route('about') }}">
@@ -43,6 +43,20 @@
                             href=" {{ route('portofolio') }}">
                             <span data-feather="file"></span>
                             Portofolio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ (request()->segment(2) == 'daftar-proyek') ? 'active' : '' }}"
+                            href=" {{ route('daftar-proyek') }}">
+                            <span data-feather="list"></span>
+                            Daftar Proyek
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ (request()->segment(2) == 'konsep-desain') ? 'active' : '' }}"
+                            href=" {{ route('konsep-desain') }}">
+                            <span data-feather="grid"></span>
+                            Konsep Desain
                         </a>
                     </li>
                     <li class="nav-item">

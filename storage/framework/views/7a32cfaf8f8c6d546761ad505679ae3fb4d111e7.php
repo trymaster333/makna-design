@@ -22,7 +22,7 @@
     <main class="form-signin text-center bg-gradient">
         <form action="<?php echo e(route('login.action')); ?>" method="POST">
             <?php echo csrf_field(); ?>
-            <img class="mb-4" src="<?php echo e(URL::asset('/images/logo.png')); ?>" alt="" width="150" height="150">
+            <img class="mb-4" src="<?php echo e(asset('images/logo.png')); ?>" alt="" width="150" height="150">
             <h1 class="h3 mb-3 fw-normal">Admin Login</h1>
             <?php if(session('success')): ?>
             <p class="alert alert-success"><?php echo e(session('success')); ?></p>
@@ -49,7 +49,7 @@
                 </label>
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+            <p class="mt-5 mb-3 text-muted">&copy; Makna Design</p>
         </form>
     </main>
     <script>

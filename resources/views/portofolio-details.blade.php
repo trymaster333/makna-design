@@ -33,4 +33,4 @@
 
 </main><!-- End #main -->
 
-</html>
+@endsection

@@ -49,7 +49,7 @@
                                 <label for="icon" class="form-label fw-bolder">Cover:</label>
                                 <img src="{{ url('storage/'.$data->foto) }}" class="rounded d-block img-fluid"
                                     style="width:100px; height:100px;" alt="foto user" id="foto">
-                                <label style="font-size: x-small; color: red;">max upload 10MB *</label>
+                                <label style="font-size: x-small; color: red;">max upload 2MB *</label>
                                 <br>
                                 <input type="file" name="image" id="image" onchange="validateFile(this)">
                             </div>

@@ -11,6 +11,8 @@ use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DaftarProyekController;
+use App\Http\Controllers\KonsepDesainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,11 +24,12 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 //HOMEPAGE
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/portofolio/{id}', [HomeController::class, 'portofolio'])->name('home.portofolio');
+Route::get('/daftar-proyek/{id}', [HomeController::class, 'daftarproyek'])->name('home.daftar-proyek');
 
 // ADMIN LOGIN AUTHENTICATION
 Route::middleware(['auth'])->group(function () {
@@ -40,7 +43,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/about/{id}/edit', [AboutController::class, 'edit'])->name('about.edit');
         Route::put('/about/{id}', [AboutController::class, 'update'])->name('about.update');
         /*Route::get('/about', function () {
-            return view('admin/about', ['title' => 'About']);
+        return view('admin/about', ['title' => 'About']);
         })->name('about');*/
 
         //KONTAK
@@ -93,6 +96,24 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/setting/edit', [SettingController::class, 'edit'])->name('setting.edit');
         Route::get('/setting/password', [UserController::class, 'settingpw'])->name('setting.password');
         Route::put('/setting/update', [SettingController::class, 'update'])->name('setting.update');
+
+        //daftar-proyek
+        Route::get('/daftar-proyek', [DaftarProyekController::class, 'index'])->name('daftar-proyek');
+        Route::get('/daftar-proyek/list', [DaftarProyekController::class, 'daftarproyekData'])->name('daftar-proyek.list');
+        Route::get('/daftar-proyek/add/data', [DaftarProyekController::class, 'create'])->name('daftar-proyek.add');
+        Route::post('/daftar-proyek/store', [DaftarProyekController::class, 'store'])->name('daftar-proyek.store');
+        Route::get('/daftar-proyek/edit/{id}', [DaftarProyekController::class, 'edit'])->name('daftar-proyek.edit');
+        Route::put('/daftar-proyek/{id}', [DaftarProyekController::class, 'update'])->name('daftar-proyek.update');
+        Route::delete('/daftar-proyek/{id}', [DaftarProyekController::class, 'destroy'])->name('daftar-proyek.destroy');
+
+        //konsep-desain
+        Route::get('/konsep-desain', [KonsepDesainController::class, 'index'])->name('konsep-desain');
+        Route::get('/konsep-desain/list', [KonsepDesainController::class, 'konsepdesainData'])->name('konsep-desain.list');
+        Route::get('/konsep-desain/add/data', [KonsepDesainController::class, 'create'])->name('konsep-desain.add');
+        Route::post('/konsep-desain/store', [KonsepDesainController::class, 'store'])->name('konsep-desain.store');
+        Route::get('/konsep-desain/edit/{id}', [KonsepDesainController::class, 'edit'])->name('konsep-desain.edit');
+        Route::put('/konsep-desain/{id}', [KonsepDesainController::class, 'update'])->name('konsep-desain.update');
+        Route::delete('/konsep-desain/{id}', [KonsepDesainController::class, 'destroy'])->name('konsep-desain.destroy');
     });
 });
 
@@ -106,6 +127,5 @@ Route::post('password', [UserController::class, 'password_action'])->name('passw
 
 //logout
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
-
 
 Route::post('/file-upload', [ImageController::class, 'upload'])->name('upload.image')->middleware('auth');

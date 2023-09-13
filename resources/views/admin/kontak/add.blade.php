@@ -48,6 +48,8 @@
                             <label for="icon" class="form-label fw-bolder">Icon:</label>
                             <img src="https://placehold.co/400" class="rounded d-block img-fluid"
                                 style="width:100px; height:100px;" alt="icon" id="icon">
+                                <label style="font-size: x-small; color: red;">max upload 2MB *</label>
+                                <br>
                             <input type="file" name="image" id="image" onchange="validateFile(this)">
                         </div>
 
@@ -62,38 +64,30 @@
 
 </main>
 <script>
-    tinymce.init({
-    selector: '.rich-text-editor',
-    // Additional configuration options if needed
-    height: 300
-  });
-
   function validateFile(input) {
     var file = input.files[0];
     var fileType = file.type;
     var maxSize = 2 * 1024 * 1024; // 2MB (adjust the size limit as needed)
-    
-    if (!fileType.startsWith('image/')) {
+
+    if (!fileType.startsWith("image/")) {
         // Display an error message or perform any other actions
-        alert('File bukan gambar.');
-        input.value = ''; // Clear the file input field
+        alert("File bukan gambar.");
+        input.value = ""; // Clear the file input field
     }
     if (file.size > maxSize) {
         // Display an error message or perform any other actions
-        alert('Maksimum upload gambar ukuran file 2MB.');
-        input.value = ''; // Clear the file input field
+        alert("Maksimum upload gambar ukuran file 2MB.");
+        input.value = ""; // Clear the file input field
     }
 
-
     var reader = new FileReader();
-    var imgElement = document.getElementById('icon');
+    var imgElement = document.getElementById("icon");
 
-    reader.onload = function(e) {
-        imgElement.setAttribute('src', e.target.result);
+    reader.onload = function (e) {
+        imgElement.setAttribute("src", e.target.result);
     };
 
     reader.readAsDataURL(file);
-
 }
 </script>
 @endsection

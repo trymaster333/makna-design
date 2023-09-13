@@ -19,7 +19,7 @@
         <?php endif; ?>
         <a href="<?php echo e(route('paket-harga.add')); ?>" class=" btn btn-success mb-2"><i class="bi bi-plus"></i>Tambah Data</a>
         <div class="overflow-auto">
-            <table id="users-table" class="table table-bordered table-striped">
+            <table id="users-table" class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
                         <th class="col-1">#</th>

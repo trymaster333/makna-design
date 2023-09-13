@@ -44,7 +44,7 @@ class UserController extends Controller
 
         if (Auth::check()) {
             session()->flash('message', 'Welcome!');
-            return redirect()->intended('admin/dashboard');
+            return redirect()->intended('admin/about');
         }
         return view('admin/login', $data);
     }
@@ -63,12 +63,12 @@ class UserController extends Controller
         // If login using email
         if (Auth::attempt(['email' => request()->username, 'password' => request()->password], $remember)) {
             request()->session()->regenerate();
-            return redirect()->intended('admin/dashboard');
+            return redirect()->intended('admin/about');
         }
         // If login using username
         else if (Auth::attempt(['username' => request()->username, 'password' => request()->password], $remember)) {
             request()->session()->regenerate();
-            return redirect()->intended('admin/dashboard');
+            return redirect()->intended('admin/about');
         }
         // If incorrect credentials
         else {

@@ -17,13 +17,7 @@
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link <?php echo e((request()->segment(2) == 'dashboard') ? 'active' : ''); ?>"
-                            aria-current="page" href="<?php echo e(route('dashboard')); ?>">
-                            <span data-feather="home"></span>
-                            Dashboard
-                        </a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link <?php echo e((request()->segment(2) == 'about') ? 'active' : ''); ?>"
                             href="<?php echo e(route('about')); ?>">
@@ -43,6 +37,20 @@
                             href=" <?php echo e(route('portofolio')); ?>">
                             <span data-feather="file"></span>
                             Portofolio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?php echo e((request()->segment(2) == 'daftar-proyek') ? 'active' : ''); ?>"
+                            href=" <?php echo e(route('daftar-proyek')); ?>">
+                            <span data-feather="list"></span>
+                            Daftar Proyek
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?php echo e((request()->segment(2) == 'konsep-desain') ? 'active' : ''); ?>"
+                            href=" <?php echo e(route('konsep-desain')); ?>">
+                            <span data-feather="grid"></span>
+                            Konsep Desain
                         </a>
                     </li>
                     <li class="nav-item">
