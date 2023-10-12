@@ -17,6 +17,14 @@
         display: none
     }
 
+    .zoom-effect:hover {
+        transform: scale(1.1);
+    }
+
+    .zoom-effect {
+        transition: transform 0.5s;
+    }
+
     /* Input Field CSS */
     .datainput {
         position: relative;
@@ -285,15 +293,15 @@
 
             <div class="row text-center">
                 @foreach ($konsep_desain as $item)
-                    <div class="col-sm-3 mb-4 mb-lg-0" data-aos="fade-up">
-                        <div class="card">
-                            <img src="{{ url('storage/'.$item->cover) }}" class="card-img-top" alt="...">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">{{$item->judul}}</h5>
-                                
-                            </div>
+                <div class="col-sm-3 mb-4 mb-lg-0" data-aos="fade-up">
+                    <div class="card zoom-effect">
+                        <img src="{{ url('storage/'.$item->cover) }}" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{$item->judul}}</h5>
+
                         </div>
                     </div>
+                </div>
 
                 @endforeach
 
@@ -338,7 +346,8 @@
                                     <p class="card-text"><i data-feather="dollar-sign"></i>{{$item->anggaran}}</p>
                                 </div>
                                 <div class="col-sm-4">
-                                    <p class="card-text"><i data-feather="home"></i>{{$item->luas_tanah."m2(LT) / ".$item->luas_bangunan."m2(LB)"}}</p>
+                                    <p class="card-text"><i data-feather="home"></i>{{$item->luas_tanah."m2(LT) /
+                                        ".$item->luas_bangunan."m2(LB)"}}</p>
                                 </div>
                             </div>
                             <div class="row mt-4">
@@ -352,14 +361,15 @@
                                     <p class="card-text"><i data-feather="home"></i>{{$item->jenis}}</p>
                                 </div>
                             </div>
-                            
+
                             </p>
                             <div class="text-left">
-                                <a href="{{ route('home.daftar-proyek', $item->id) }}" class="btn btn-light">Detail Proyek</a>
+                                <a href="{{ route('home.daftar-proyek', $item->id) }}" class="btn btn-light">Detail
+                                    Proyek</a>
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
                     @empty
                     <p>No data</p>
@@ -381,7 +391,8 @@
                                     <p class="card-text"><i data-feather="dollar-sign"></i>{{$item->anggaran}}</p>
                                 </div>
                                 <div class="col-sm-4">
-                                    <p class="card-text"><i data-feather="home"></i>{{$item->luas_tanah."m2(LT) / ".$item->luas_bangunan."m2(LB)"}}</p>
+                                    <p class="card-text"><i data-feather="home"></i>{{$item->luas_tanah."m2(LT) /
+                                        ".$item->luas_bangunan."m2(LB)"}}</p>
                                 </div>
                             </div>
                             <div class="row mt-4">
@@ -395,14 +406,15 @@
                                     <p class="card-text"><i data-feather="home"></i>{{$item->jenis}}</p>
                                 </div>
                             </div>
-                            
+
                             </p>
                             <div class="text-left">
-                                <a href="{{ route('home.daftar-proyek', $item->id) }}" class="btn btn-light">Detail Proyek</a>
+                                <a href="{{ route('home.daftar-proyek', $item->id) }}" class="btn btn-light">Detail
+                                    Proyek</a>
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
                     @empty
                     <p>No data</p>
@@ -631,7 +643,7 @@ if (typeof document.readyState === 'string' && document.readyState === 'complete
                     <div class="datainput">
                         <select id="tipe_kebutuhan">
                             <option hidden='hidden' selected='selected' value=''>Pilih Kebutuhan Jasa</option>
-                            <option value="Desain & Bangun">Desain & Bangun</option>
+                            <option value="Desain%20%26%20Bangun">Desain & Bangun</option>
                             <option value="Desain Saja">Desain Saja</option>
                             <option value="Bangun Saja">Bangun Saja</option>
                         </select>
@@ -652,7 +664,7 @@ if (typeof document.readyState === 'string' && document.readyState === 'complete
                             <option value="Apartemen">Apartemen</option>
                             <option value="Kantor">Kantor</option>
                             <option value=">Restaurant">Restaurant</option>
-                            <option value="ReKomersil/Retailnovasi">Komersil/Retail</option>
+                            <option value="Komersil/Retail">Komersil/Retail</option>
                             <option value="Lain-lain">Lain-lain</option>
                         </select>
                     </div>

@@ -9,10 +9,10 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
         integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
-        <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -49,8 +49,8 @@
                     <li><a class="nav-link scrollto" href="#about">About</a></li>
                     <li><a class="nav-link scrollto" href="#konsep-desain">Konsep Desain</a></li>
                     <li><a class="nav-link scrollto" href="#daftar-proyek">Daftar Proyek</a></li>
-                    <li><a class="nav-link scrollto" href="#pricing">Paket Harga</a></li>
                     <li><a class="nav-link scrollto " href="#more-services">Portfolio</a></li>
+                    <li><a class="nav-link scrollto" href="#pricing">Paket Harga</a></li>
                     <li><a class="nav-link scrollto" href="#testimonials">Review</a></li>
                     <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
@@ -61,7 +61,7 @@
 
         </div>
     </header><!-- End Header -->
-    
+
     @yield('content')
 
     <!-- ======= Footer ======= -->
@@ -79,8 +79,8 @@
                         <a href="#hero" class="scrollto">Home</a>
                         <a href="#about" class="scrollto">About</a>
                         <a href="#konsep-desain" class="scrollto">Konsep Desain</a>
-                        <a href="#daftar-proyek" class="scrollto">Daftar Proyek</a>
                         <a href="#pricing" class="scrollto">Paket Harga</a>
+                        <a href="#daftar-proyek" class="scrollto">Daftar Proyek</a>
                         <a href="#more-services" class="scrollto">Portofolio</a>
                         <a href="#faq" class="scrollto">FAQ</a>
                         <a href="#contact" class="scrollto">Kontak</a>
@@ -105,11 +105,11 @@
     <!-- Template Main JS File -->
     <script src="{{url('assets/js/main.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
-    integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
-</script>
-<script>
-    feather.replace();
-  </script>
+        integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
+    </script>
+    <script>
+        feather.replace();
+    </script>
 
 </body>
 
