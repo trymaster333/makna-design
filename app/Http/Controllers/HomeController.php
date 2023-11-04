@@ -19,7 +19,13 @@ class HomeController extends Controller
     {
         $about = About::first();
         $paket_harga = PaketHarga::orderBy('harga', 'asc')->get();
-        $portofolio = Portofolio::orderBy('id', 'desc')->get();
+        //$portofolio = Portofolio::orderBy('id', 'desc')->get();
+        $portofolios = Portofolio::orderBy('id', 'desc')->get()->map(function($portofolio) {
+            $portofolio->deskripsi = str_replace('&nbsp;', '', $portofolio->deskripsi);
+            $portofolio->deskripsi = strip_tags($portofolio->deskripsi);
+            return $portofolio;
+          });
+
         $review = Review::orderBy('id', 'desc')->limit(10)->get();
         $faq = Faq::orderBy('id', 'asc')->limit(5)->get();
         $kontak = Kontak::orderBy('id', 'asc')->get();
@@ -30,7 +36,7 @@ class HomeController extends Controller
         return view('home', [
             'title' => 'Makna Design - Jasa Desain Bangunan',
             'about' => $about,
-            'portofolio' => $portofolio,
+            'portofolio' => $portofolios,
             'paket_harga' => $paket_harga,
             'review' => $review,
             'faq' => $faq,

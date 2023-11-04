@@ -441,7 +441,8 @@
                         <div class="card-body">
                             <h5 class="card-title"><a
                                     href="{{ route('home.portofolio', $item->id) }}">{{$item->judul}}</a></h5>
-                            <p class="card-text">{{ \Illuminate\Support\Str::limit($item->deskripsi, 60,
+                            <p class="card-text">{{ 
+                            $text = \Illuminate\Support\Str::limit($item->deskripsi, 60,
                                 $end='...') }}</p>
                             <div class="read-more"><a href="{{ route('home.portofolio', $item->id) }}"><i
                                         class="bi bi-arrow-right"></i> Lanjut Baca</a></div>

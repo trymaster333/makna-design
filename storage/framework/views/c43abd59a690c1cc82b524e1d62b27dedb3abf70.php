@@ -442,7 +442,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><a
                                     href="<?php echo e(route('home.portofolio', $item->id)); ?>"><?php echo e($item->judul); ?></a></h5>
-                            <p class="card-text"><?php echo e(\Illuminate\Support\Str::limit($item->deskripsi, 60,
+                            <p class="card-text"><?php echo e($text = \Illuminate\Support\Str::limit($item->deskripsi, 60,
                                 $end='...')); ?></p>
                             <div class="read-more"><a href="<?php echo e(route('home.portofolio', $item->id)); ?>"><i
                                         class="bi bi-arrow-right"></i> Lanjut Baca</a></div>
